@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'trail_tracker.trails'
 ]
 
 MIDDLEWARE = [
@@ -83,8 +84,8 @@ DATABASES = {
         'NAME': 'trails',
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': '127.0.01',
-        'PORT': '3306',
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
 
@@ -126,3 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# In app settings
+TRAIL_NAME_MAX_LENGTH = 100
+DEFAULT_MODEL_FIELD_LENGTH = 50
