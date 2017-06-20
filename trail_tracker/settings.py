@@ -69,8 +69,13 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+        'DIRS': [
+            'trail_tracker/templates/',
+        ],
     },
 ]
+
+
 
 WSGI_APPLICATION = 'trail_tracker.wsgi.application'
 
