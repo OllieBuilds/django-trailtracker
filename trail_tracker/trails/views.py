@@ -15,4 +15,4 @@ class ListTrailsView(ListView):
 
     def render_to_response(self, request):
         print dir(self)
-        return super(ListTrailsView, self).render_to_response(self, request )
+        return super(ListTrailsView, self).render_to_response( request)

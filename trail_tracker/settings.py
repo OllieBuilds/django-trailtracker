@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'trail_tracker.trails'
+    'trail_tracker.trails',
+    'trail_tracker.api',
 ]
 
 MIDDLEWARE = [

@@ -21,4 +21,5 @@ from django.conf.urls import include, url
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('trail_tracker.trails.urls')),
+    url(r'^', include('trail_tracker.api.urls')),
 ]
