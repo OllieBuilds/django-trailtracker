@@ -6,6 +6,4 @@ class TrailSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Trail
-        fields = ['name', 'city', 'state', 'country', 'lat', 'lon']
-
-        
+        fields = ['id', 'name', 'city', 'state', 'country', 'lat', 'lon']

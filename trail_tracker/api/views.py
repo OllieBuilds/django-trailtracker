@@ -12,5 +12,12 @@ from trail_tracker.trails.models import Trail
 
 class ListTrailsViewSet(viewsets.ModelViewSet):
     model = Trail
-    queryset = Trail.objects.all()
+    # queryset = Trail.objects.all()
     serializer_class = TrailSerializer
+    lookup_field = 'name'
+
+    def get_queryset(self):
+        query = Trail.objects.all()
+
+        print self.request
+        return query
