@@ -3,7 +3,7 @@ from trail_tracker.api import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'trails', views.TestClass, base_name='trails')
+router.register(r'trails', views.ListTrailsViewSet, base_name='trails')
 
 app_name = 'api'
 urlpatterns = [

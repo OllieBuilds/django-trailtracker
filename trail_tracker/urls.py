@@ -22,7 +22,6 @@ from trail_tracker.api import views
 
 
 router = routers.DefaultRouter()
-router.register(r'trails', views.TrailViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

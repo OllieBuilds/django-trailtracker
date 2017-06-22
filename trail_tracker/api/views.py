@@ -10,7 +10,7 @@ from trail_tracker.api.serializers import TrailSerializer
 
 from trail_tracker.trails.models import Trail
 
-class TestClass(viewsets.ModelViewSet):
+class ListTrailsViewSet(viewsets.ModelViewSet):
     model = Trail
     queryset = Trail.objects.all()
     serializer_class = TrailSerializer
