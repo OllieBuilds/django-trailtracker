@@ -1,56 +1,21 @@
-import gpxpy
-import gpxpy.gpx
+import json, xmltodict
 
 from django.core.management.base import BaseCommand
 
 
 class Command(BaseCommand):
+    help ="""
+        Accepts GPX file and converts to JSON object
+
+        Needs more robust error handling and validation.
+        """
+
+    def add_arguments(self, parser):
+        parser.add_argument('gpx_file', type=file)
 
     def handle(self, *args, **options):
-
-        gpx_file = open('sample.gpx', 'r')
-
-        gpx = gpxpy.parse(gpx_file)
-
-        for track in gpx.tracks:
-            for segment in track.segments:
-                for point in segment.points:
-                    print 'Point at ({0},{1}) -> {2}'.format(point.latitude, point.longitude, point.elevation)
-
-        for waypoint in gpx.waypoints:
-            print 'waypoint {0} -> ({1},{2})'.format(waypoint.name, waypoint.latitude, waypoint.longitude)
-
-        for route in gpx.routes:
-            print 'Route:'
-            for point in route.points:
-                print 'Point at ({0},{1}) -> {2}'.format(point.latitude, point.longitude, point.elevation)
-
-        # There are many more utility methods and functions:
-        # You can manipulate/add/remove tracks, segments, points, waypoints and routes and
-        # get the GPX XML file from the resulting object:
-
-        print 'GPX:', gpx.to_xml()
-
-        # Creating a new file:
-        # --------------------
-
-        gpx = gpxpy.gpx.GPX()
-
-        # Create first track in our GPX:
-        gpx_track = gpxpy.gpx.GPXTrack()
-        gpx.tracks.append(gpx_track)
-
-        # Create first segment in our GPX track:
-        gpx_segment = gpxpy.gpx.GPXTrackSegment()
-        gpx_track.segments.append(gpx_segment)
-
-        # Create points:
-        gpx_segment.points.append(gpxpy.gpx.GPXTrackPoint(2.1234, 5.1234, elevation=1234))
-        gpx_segment.points.append(gpxpy.gpx.GPXTrackPoint(2.1235, 5.1235, elevation=1235))
-        gpx_segment.points.append(gpxpy.gpx.GPXTrackPoint(2.1236, 5.1236, elevation=1236))
-
-        # You can add routes and waypoints, too...
-
-        print 'Created GPX:', gpx.to_xml()
-
-        return
+        for gpx_file in options['gpx_file']:
+            try:
+                gpx = open(gpx_file, 'r')
+                ride_dict = xmltodict.parse(gpx, xml_attribs=True)
+                return json.dumps(ride_dict, indent=4)
