@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'trail_tracker.trails',
     'trail_tracker.api',
     'rest_framework',
+    'trail_tracker.trails.management.commands.parse_gpx'
 ]
 
 # API
