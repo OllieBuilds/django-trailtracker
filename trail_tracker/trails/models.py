@@ -18,3 +18,10 @@ class Trail(models.Model):
     # GPS location of trailhead
     lat = models.FloatField(_('latitude'), default='')
     lon = models.FloatField(_('longitude'), default='')
+
+    @classmethod
+    def create(cls, name='test', city='Boston', state='MA',
+                    country='US', lat=123, lon=321):
+
+        trail = cls(name=name, city=city, state=state, country=country, lat=lat, lon=lon)
+        return trail

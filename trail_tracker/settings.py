@@ -41,8 +41,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'trail_tracker.trails'
+    'trail_tracker.trails',
+    'trail_tracker.api',
+    'rest_framework',
+    'trail_tracker.trails.management.commands.parse_gpx'
 ]
+
+# API
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'PAGE_SIZE': 10
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -69,8 +81,13 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+        'DIRS': [
+            'trail_tracker/templates/',
+        ],
     },
 ]
+
+
 
 WSGI_APPLICATION = 'trail_tracker.wsgi.application'
 

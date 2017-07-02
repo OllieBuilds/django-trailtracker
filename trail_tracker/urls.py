@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.urls import reverse_lazy
+from django.conf.urls import include, url
+from rest_framework import routers
+from trail_tracker.api import views
+
+
+router = routers.DefaultRouter()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^', include('trail_tracker.trails.urls')),
+    url(r'^api/', include('trail_tracker.api.urls')),
 ]
