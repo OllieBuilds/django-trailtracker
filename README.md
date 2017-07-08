@@ -18,3 +18,7 @@
 ## Tech
 *   D3
 *   Mongo?
+
+
+## Dependecies
+*  

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from dotenv import load_dotenv, find_dotenv
+from mongoengine import connect
 
 # Find and load environment variables
 load_dotenv(find_dotenv())
@@ -97,15 +98,15 @@ WSGI_APPLICATION = 'trail_tracker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.dummy',
         'NAME': 'trails',
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'USER': os.environ.get('DB_USER'),'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': os.environ.get('DB_HOST'),
         'PORT': os.environ.get('DB_PORT'),
     }
 }
 
+connect('trails', username=os.environ.get('DB_USER'), password=os.environ.get('DB_PASSWORD'))
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
