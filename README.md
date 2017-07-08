@@ -7,14 +7,14 @@
 
 
 ## User Stories
-AU I want to upload exported trail data
-AU I want that to be easy
-AU I want to be able to easily manipulate data
-    0> Lcean UX
-AU I want to store euipment data
-AU I want my data to be secure
+*   AU I want to upload exported trail data
+*   AU I want that to be easy
+*   AU I want to be able to easily manipulate data
+  **  clean UX
+*   AU I want to store euipment data
+*   AU I want my data to be secure
 
 
 ## Tech
-D3
-Mongo?
+*   D3
+*   Mongo?
