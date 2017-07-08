@@ -81,3 +81,7 @@ MIT © Ben Adamski, Phil Schoof, Oliver Scarborough, Susan Daitue.
 ## Tech
 *   D3
 *   Mongo?
+
+
+## Dependecies
+*  
