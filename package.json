@@ -4,7 +4,7 @@
   "description": "api for trailtracker application",
   "main": "index.js",
   "dependencies": {
-    "gitpair": "^0.0.7"
+    "gitpair": "0.0.7"
   },
   "devDependencies": {},
   "scripts": {
