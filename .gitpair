@@ -1,15 +1,15 @@
 {
   "team": [
     { "name": "Ben Adamski",
-      "aliases": ["ben", "bja"],
+      "aliases": ["bja", "ben"],
       "email": "benjadamski@gmail.com" },
     { "name": "Phil Schoof",
-      "aliases": ["phil", "ps"],
+      "aliases": ["jm", "jon", "jonathan", "jonathanmcclennon"],
       "email": "phil.schoof@gmail.com" },
     { "name": "Oliver Scarborough",
       "aliases": ["oliver", "os"],
       "email": "scarborough.oliver@gmail.com" },
-      { "name": "Susan Daiute",
+    { "name": "Susan Daiute",
       "aliases": ["susan", "sd"],
       "email": "susandaiute@gmail.com" }
   ]
