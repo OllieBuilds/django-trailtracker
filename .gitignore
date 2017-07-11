@@ -18,6 +18,9 @@ credentials.py
 credentials.pyc
 *.env
 
+# We only need to share the Vagrantfile
+.vagrant/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
