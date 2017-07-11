@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from __future__ import print_function
 
 from django.shortcuts import render
 from django.urls import reverse
@@ -16,8 +15,9 @@ class ListTrailsViewSet(viewsets.ModelViewSet):
     # queryset = Trail.objects.all()
     serializer_class = TrailSerializer
     lookup_field = 'name'
+
     def get_queryset(self):
         query = Trail.objects.all()
 
-        print(self.request)
+        print self.request
         return query
