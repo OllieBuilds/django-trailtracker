@@ -11,15 +11,14 @@ class Trail(Document):
     Trail model references IRL trails
     """
 
-    question = StringField(max_length=200)
-    # CharField(_('name'), max_length=settings.TRAIL_NAME_MAX_LENGTH, default='')
-    # CharField(_('city'), max_length=settings.DEFAULT_MODEL_FIELD_LENGTH, default='')
-    # CharField(_('state'), max_length=2, default='')
-    # CharField(_('country'), max_length=settings.DEFAULT_MODEL_FIELD_LENGTH, default='US')
+    name = StringField(max_length=settings.TRAIL_NAME_MAX_LENGTH, default='')
+    city = StringField(max_length=settings.DEFAULT_MODEL_FIELD_LENGTH, default='')
+    state = StringField(max_length=2, default='')
+    country = StringField(max_length=settings.DEFAULT_MODEL_FIELD_LENGTH, default='US')
 
     # GPS location of trailhead
-    # FloatField(_('latitude'), default='')
-    # FloatField(_('longitude'), default='')
+    lat = FloatField(default='')
+    lon = FloatField(default='')
 
     @classmethod
     def create(cls, name='test', city='Boston', state='MA',
