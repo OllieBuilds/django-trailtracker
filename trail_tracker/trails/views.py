@@ -14,5 +14,4 @@ class ListTrailsView(ListView):
     template_name= 'trails/trails_list.html'
 
     def render_to_response(self, request):
-        print dir(self)
         return super(ListTrailsView, self).render_to_response( request)

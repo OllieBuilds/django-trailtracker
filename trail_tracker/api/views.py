@@ -15,9 +15,8 @@ class ListTrailsViewSet(viewsets.ModelViewSet):
     # queryset = Trail.objects.all()
     serializer_class = TrailSerializer
     lookup_field = 'name'
-
     def get_queryset(self):
         query = Trail.objects.all()
 
-        print self.request
+        print(self.request)
         return query
