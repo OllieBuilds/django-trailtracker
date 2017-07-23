@@ -16,15 +16,15 @@ class TestModel(unittest.TestCase):
         self.conn = mongoengine.connect('mongoenginetest', host='mongomock://localhost', alias='test')
 
     def tearDown(self):
-    # There is a bug in Mongomock's drop_database() implementation so we
-    # must manually delete data to be sure that everything is cleaned up.
+        # There is a bug in Mongomock's drop_database() implementation so we
+        # must manually delete data to be sure that everything is cleaned up.
 
-    # Loop over each of our Mongo collections and delete the records.
-    collections = [Trail]
-    for collection in collections:
-        collections.objects.delete()
+        # Loop over each of our Mongo collections and delete the records.
+        collections = [Trail]
+        for collection in collections:
+            collection.objects.delete()
 
-    self.conn.drop_database('mongoenginetest')
+        self.conn.drop_database('mongoenginetest')
 
     def test_orm_working(self):
         # Assumes database is empty
