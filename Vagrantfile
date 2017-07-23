@@ -2,9 +2,10 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Global Configs
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.provision 'shell', path: 'bootstrap.sh'
 
-  config.vm.synced_folder "trail_tracker", "/home/vagrant/trail_tracker"
+  config.vm.synced_folder "", "/home/vagrant/trail_tracker"
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--usb", "off"]
