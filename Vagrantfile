@@ -3,7 +3,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Global Configs
   config.vm.box = "ubuntu/xenial64"
-  config.vm.provision 'shell', path: 'bootstrap.sh'
 
   config.vm.synced_folder "", "/home/vagrant/trail_tracker"
 
